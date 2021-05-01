@@ -72,19 +72,19 @@ end
    for all intents and purposes, this is the literal number, `ONE`
 
  FixedPoint#mult() function: note A8\
- # GENERAL MULTIPLICATION\
+ ## GENERAL MULTIPLICATION
    the radix point "moves" a distance double that of its original from the least significant digit\
    (e.g. radius 5 radix 2, 010.00 * 010.00 = 100.0000)\
    however, the intermediate underlying integer representation can become large with this method, so a new one is advisable\
    raws will be split into two components, much like math.fmod\
- ## FRACTIONAL PARTS\
+ ## FRACTIONAL PARTS
    0.099 is represented by 99. note 0.099 * 0.099 = 0.009801, whereas 99 * 99 = 9801.\
    alternative way to view the integer multiplication is 099 * 099 = 009801, where the first three are the main fractional product\
    the reason we have a six digit result is because we are multiplying in spaces of 1e3 and 1e3, which yields a space of 1e6 as a product\
    the least significant three digits are unnecessary for all but rounding policy\
- ### PLEASE NOTE DUE TO ROUNDING THAT FIXED POINT MULTIPLICATION IS ONLY ASSOCIATIVE WITHIN THAT ROUNDING ERROR MARGIN\
+ ### PLEASE NOTE DUE TO ROUNDING THAT FIXED POINT MULTIPLICATION IS ONLY ASSOCIATIVE WITHIN THAT ROUNDING ERROR MARGIN
    the following paper "Synthesis of Fixed-Point Programs" provides examples of errors of up to 0.00311\
- ### PERFORMANCE NOTE\
+ ### PERFORMANCE NOTE
    if you wish to maximize performance, with small enough values (product space less than 1e15), you may write:\
 ```lua
 	local product = raw1 * raw2
@@ -92,7 +92,7 @@ end
 ```
 
  FixedPoint#div() function: note A9\
-# DIVISION\
+## DIVISION
    consider dividing simply by one, in a fixed point context of radius 5 and radix 2:\
      123.45 / 001.00 = 123.45\
    underneath, we would be dividing by 100. thus, we have to first multiply the dividend by 100 (`RADIX_RHS_VAL`) to get the right result.\
@@ -102,7 +102,6 @@ end
    cross platform accuracy up to our max radius. according to IEEE, double values have 15 decimal digits of precision.\
    it is this limit itself that restricts our choice of `_MAX_RADIUS` to 14.\
    (we would be at an unacceptable performance compromise to try implementing a division algorithm)
- 
 ### PERFORMANCE NOTE   
    i don't boast about the lofty cost these wrapper functions incur for a simple operator. if you want better performance, here is an alternative:\
 ```lua
