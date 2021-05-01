@@ -6,10 +6,15 @@
  3.  Fixed-point values are a solution for building a deterministic game state that can become necessary in lockstep networking.
 
  The basic math operators of addition, subtraction, multiplication, and division correspond to the following methods:
-  #add(a, b, ignoreOverflow*, errorlevel*)
-  #sub(a, b, ignoreOverflow*, errorlevel*)
-  #mult(a, b, policy*, ignoreOverflow*, errorlevel*)
-  #div(a, b, policy*, ignoreOverflow*, errorlevel*)
+ 
+ #add(a, b, ignoreOverflow*, errorlevel*)
+ 
+ #sub(a, b, ignoreOverflow*, errorlevel*)
+ 
+ #mult(a, b, policy*, ignoreOverflow*, errorlevel*)
+ 
+ #div(a, b, policy*, ignoreOverflow*, errorlevel*)
+ 
  \* optional.
 
  There are also trigonometric and exponential functions / operators with implementations in separate files.\
