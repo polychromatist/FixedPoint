@@ -71,7 +71,7 @@ end
    it's also the reciprocal of the *scaling factor*\
    for all intents and purposes, this is the literal number, `ONE`
 
- FixedPoint#mult() function: note A8\
+ FixedPoint#mult() function: note A8...
  ## GENERAL MULTIPLICATION
    the radix point "moves" a distance double that of its original from the least significant digit\
    (e.g. radius 5 radix 2, 010.00 * 010.00 = 100.0000)\
@@ -91,7 +91,7 @@ end
 	product = (product - math.fmod(product, fix.RADIX_RHS_VAL)) / fix.RADIX_RHS_VAL
 ```
 
- FixedPoint#div() function: note A9\
+ FixedPoint#div() function: note A9...
 ## DIVISION
    consider dividing simply by one, in a fixed point context of radius 5 and radix 2:\
      123.45 / 001.00 = 123.45\
