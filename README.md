@@ -10,7 +10,7 @@
   #sub(a, b, ignoreOverflow*, errorlevel*)
   #mult(a, b, policy*, ignoreOverflow*, errorlevel*)
   #div(a, b, policy*, ignoreOverflow*, errorlevel*)
- * optional.
+ \* optional.
 
  There are also trigonometric and exponential functions / operators with implementations in separate files.
  On ROBLOX, you can parent them as ModuleScripts to this ModuleScript and it will try to pick up on them.
