@@ -179,3 +179,5 @@ end
     i.e. ((X * OVERFLOW_VAL) * (Y * OVERFLOW_VAL)) / OVERFLOW_VAL = (X * Y) * OVERFLOW_VAL
 	    
 take care when performing operations with these values.
+
+_Footnote: I also have a similar Vector fixed-point math library, only available for 3D. Please contact me if you are interested._
