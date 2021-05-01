@@ -60,12 +60,12 @@ end
    `RHS_VAL` is the smallest difference between two rounded values (typically `RADIX_RHS_VAL`), can be considered "one"\
    note: return `true` if int needs to be increased IN MAGNITUDE by one, by your judgment. otherwise, the int itself will be the rounding result.
 
- note A6
+ note A6\
    if `RADIX_POINT` is too large, then when multiplying fractional parts, we may end up in a space that is 10^14 large, at which point\
    doubles start to creep up in value too high. at that point, the underlying double values may not discretize to integers correctly\
    this limitation also allows flexibility for implementation.
 
- RADIX_RHS_VAL fixed point constant: note A7
+ RADIX_RHS_VAL fixed point constant: note A7\
    `RADIX_RHS_VAL` contains the smallest number where the virtual radix point is to the right hand side of a non-zero digit\
    useful in masklike operations (i.e. split a fixed point value into its fractional and whole parts)\
    it's also the reciprocal of the *scaling factor*\
