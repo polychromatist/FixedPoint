@@ -12,21 +12,14 @@
   #div(a, b, policy*, ignoreOverflow*, errorlevel*)
  \* optional.
 
- There are also trigonometric and exponential functions / operators with implementations in separate files.
- 
- On ROBLOX, you can parent them as ModuleScripts to this ModuleScript and it will try to pick up on them.
- 
- Otherwise, add below paths to these modules
+ There are also trigonometric and exponential functions / operators with implementations in separate files.\
+ On ROBLOX, you can parent them as ModuleScripts to this ModuleScript and it will try to pick up on them.\
 
- _MAX_RADIUS: note A1
-   
-   why not 15? you can try it. the divison implementation may exhibit unknown behavior at edge-case size large numerator (i.e. 9e14).
-   
-   why not 16? the value FLINTMAX = 2^53 (9007199254740992) is the last double that can represent an integer safely.
-   
+ \_MAX_RADIUS: note A1\
+   why not 15? you can try it. the divison implementation may exhibit unknown behavior at edge-case size large numerator (i.e. 9e14).\
+   why not 16? the value FLINTMAX = 2^53 (9007199254740992) is the last double that can represent an integer safely.\
    16 refers to 16 digits, which FLINTMAX contains, so higher doubles are unsafe.
-   
-   "what do you mean safely?" i mean that FLINTMAX + 1 == FLINTMAX. thus, it is not a safe integer.
+   "what do you mean safely?" i mean that FLINTMAX + 1 == FLINTMAX. thus, it is not a safe integer.\
 	
  FixedPoint class: note A2
    
