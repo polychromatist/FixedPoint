@@ -7,13 +7,13 @@
 
  The basic math operators of addition, subtraction, multiplication, and division correspond to the following methods:
  
- #add(a, b, ignoreOverflow*, errorlevel*)
+ `#add(a, b, ignoreOverflow*, errorlevel*)`
  
- #sub(a, b, ignoreOverflow*, errorlevel*)
+ `#sub(a, b, ignoreOverflow*, errorlevel*)`
  
- #mult(a, b, policy*, ignoreOverflow*, errorlevel*)
+ `#mult(a, b, policy*, ignoreOverflow*, errorlevel*)`
  
- #div(a, b, policy*, ignoreOverflow*, errorlevel*)
+ `#div(a, b, policy*, ignoreOverflow*, errorlevel*)`
  
  \* optional.
 
