@@ -1,3 +1,5 @@
+# FixedPoint
+
  why a fixed point library?
  1.  https://stackoverflow.com/questions/20963419/cross-platform-floating-point-consistency
      in summary: Floating point values are inconsistent cross-platform; small errors are not deterministic on each system.
@@ -20,7 +22,7 @@
  There are also trigonometric and exponential functions / operators with implementations in separate files.\
  On ROBLOX, you can parent them as ModuleScripts to this ModuleScript and it will try to pick up on them.
 
-# Implementation Notes (referenced by comments in source)
+## Implementation Notes (referenced by comments in source)
 
  `_MAX_RADIUS`: note A1\
    why not 15? you can try it. the divison implementation may exhibit unknown behavior at edge-case size large numerator (i.e. `9e14`).\
@@ -28,24 +30,24 @@
    16 refers to 16 digits, which FLINTMAX contains, so higher doubles are unsafe.
    "what do you mean safely?" i mean that `FLINTMAX + 1 == FLINTMAX`. thus, it is not a safe integer.
 	
- `FixedPoint` class: note A2
+ `FixedPoint` class: note A2\
    This class produces high level objects for interpreting and working with fixed point numbers.\
    A fixed point number is an integer paired with a radix point, logically breaking the integer into a whole and fractional part.\
    The lower level class will be represented by doubles d with floor(d) == d and d - 1 < d, i.e. an integer.
 
- `RADIUS` positive integer: note A3
+ `RADIUS` positive integer: note A3\
    this represents place of digit in the integer that is the max distance from least significant digit (powers of 10)
    This is effectively a digit length for any given fixed point value, negative or positive
    Largest RADIUS is 14 because 10^15 is the last double that maps directly to an integer representation without rounding error
    (according to https://www.lua.org/pil/2.3.html)
 
- `RADIX_POINT` positive integer: note A4
+ `RADIX_POINT` positive integer: note A4\
    this is where the 'decimal place' ought to be, in distance from least significant digit\
    (e.g. radius 4 radix 2, numbers are of the form '51.23')\
    more formally, it is the log base 10 of the reciprocal of the scaling factor ( radix point R corresponds to scaling factor 1/10^R )\
    must be an integer exclusively between 0 and 7. i recommend choosing an even radix, and as high as possible.
 
- `ROUND_POLICY` string or function: note A5
+ `ROUND_POLICY` string or function: note A5\
    used on multiplication and division to decide how to round result of operation, accepts enum or function\
    if function, format should be:\
 ```lua
