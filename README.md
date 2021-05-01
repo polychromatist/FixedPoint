@@ -157,6 +157,7 @@ A Roblox Lua implementation of math operators for fixed-point number representat
 -- x_0 = 2^-(p/2 + 1/4)
 
 -- FixedPoint#multOvf() function: note B6
+
 -- the "overmultiply" method, multOvf, will return the coefficient on overflow that the resultant product is closest to.
 -- that is, it will return a fixed point value F where technically
 --   mult(raw1 , raw2) = mult(F , OVERFLOW_VAL)  
